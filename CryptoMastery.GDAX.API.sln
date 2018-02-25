@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoMastery.GDAX.API.Model", "CryptoMastery.GDAX.API.Model\CryptoMastery.GDAX.API.Model.csproj", "{8B68FDE7-F33D-4F84-B997-88AF0CF6E8F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoMastery.GDAX.API.Contracts", "CryptoMastery.GDAX.API.Contracts\CryptoMastery.GDAX.API.Contracts.csproj", "{C4AB835D-9491-40EA-96C1-61DE2262606A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoMastery.GDAX.API", "CryptoMastery.GDAX.API\CryptoMastery.GDAX.API.csproj", "{FD10C58A-ED4F-46F8-8250-2F9E496C279A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoMastery.GDAX.API.Sample", "CryptoMastery.GDAX.API.Sample\CryptoMastery.GDAX.API.Sample.csproj", "{593F5B74-6C58-43D9-812D-F32AC45C8477}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B68FDE7-F33D-4F84-B997-88AF0CF6E8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B68FDE7-F33D-4F84-B997-88AF0CF6E8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B68FDE7-F33D-4F84-B997-88AF0CF6E8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B68FDE7-F33D-4F84-B997-88AF0CF6E8F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4AB835D-9491-40EA-96C1-61DE2262606A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4AB835D-9491-40EA-96C1-61DE2262606A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4AB835D-9491-40EA-96C1-61DE2262606A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4AB835D-9491-40EA-96C1-61DE2262606A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD10C58A-ED4F-46F8-8250-2F9E496C279A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD10C58A-ED4F-46F8-8250-2F9E496C279A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD10C58A-ED4F-46F8-8250-2F9E496C279A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD10C58A-ED4F-46F8-8250-2F9E496C279A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{593F5B74-6C58-43D9-812D-F32AC45C8477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{593F5B74-6C58-43D9-812D-F32AC45C8477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{593F5B74-6C58-43D9-812D-F32AC45C8477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{593F5B74-6C58-43D9-812D-F32AC45C8477}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
