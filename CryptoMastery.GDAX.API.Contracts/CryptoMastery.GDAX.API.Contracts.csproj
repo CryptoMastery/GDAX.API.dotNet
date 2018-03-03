@@ -1,6 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>CryptoMastery</Authors>
+    <Company>CryptoMastery</Company>
+    <Description>Interfaces for .Net Standard Client for GDAX REST API Library</Description>
+    <PackageLicenseUrl>https://github.com/CryptoMastery/GDAX.API.dotNet/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/CryptoMastery/GDAX.API.dotNet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CryptoMastery/GDAX.API.dotNet</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\CryptoMastery.GDAX.API.Model\CryptoMastery.GDAX.API.Model.csproj" />

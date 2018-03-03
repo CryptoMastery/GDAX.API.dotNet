@@ -1,10 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>CryptoMastery</Authors>
+    <Company>CryptoMastery</Company>
+    <Description>.Net Standard Client for GDAX REST API Library</Description>
+    <PackageProjectUrl>https://github.com/CryptoMastery/GDAX.API.dotNet</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/CryptoMastery/GDAX.API.dotNet/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/CryptoMastery/GDAX.API.dotNet</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CryptoMastery.GDAX.API.Contracts\CryptoMastery.GDAX.API.Contracts.csproj" />
-    <ProjectReference Include="..\CryptoMastery.GDAX.API.Model\CryptoMastery.GDAX.API.Model.csproj" />
+    <ProjectReference Include="..\CryptoMastery.GDAX.API.Contracts\CryptoMastery.GDAX.API.Contracts.csproj">
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoMastery.GDAX.API.Model\CryptoMastery.GDAX.API.Model.csproj">
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
