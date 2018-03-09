@@ -8,7 +8,8 @@ namespace CryptoMastery.GDAX.API.Model
         Pending,
         Active,
         Done,
-        Settled
+        Settled,
+        Rejected
     }
 
     public static class OrderStatusesMethods
@@ -27,6 +28,8 @@ namespace CryptoMastery.GDAX.API.Model
                     return "done";
                 case OrderStatuses.Settled:
                     return "settled";
+                case OrderStatuses.Rejected:
+                    return "rejected";
                 default:
                     throw new ArgumentException($"Unsupported orderStatus");
             }
@@ -46,6 +49,8 @@ namespace CryptoMastery.GDAX.API.Model
                     return OrderStatuses.Done;
                 case "settled":
                     return OrderStatuses.Settled;
+                case "rejected":
+                    return OrderStatuses.Rejected;
                 default:
                     throw new ArgumentException($"Unsupported orderStatus {orderStatusText}");
             }

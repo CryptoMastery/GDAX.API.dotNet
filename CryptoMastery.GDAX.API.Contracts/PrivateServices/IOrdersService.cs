@@ -24,11 +24,11 @@ namespace CryptoMastery.GDAX.API.Contracts.PrivateServices
             OrderSelfTradePreventionFlags selfTradePreventionFlag = OrderSelfTradePreventionFlags.DecreaseAndCancel
         );
 
-        Task<Order> CancelOrderAsync(Guid orderId);
+        Task<List<Guid>> CancelOrderAsync(Guid orderId);
 
         Task<List<Order>> GetOrdersAsync();
 
-        Task<List<string>> CancelAllOrdersAsync();
+        Task<List<Guid>> CancelAllOrdersAsync();
 
         Task<Order> GetOrderByIdAsync(Guid orderId);
     }

@@ -71,6 +71,10 @@ namespace CryptoMastery.GDAX.API.Sample
             var fillsService = new FillsService(credentailsProvider, settingsProvider);
             var fills = await fillsService.GetFillsAsync(ord1.Id);
             Console.WriteLine($"{fills.Count} fills found for order {ord1.Id}");
+            
+            //Order Calcellation
+            var msg = await orderService.CancelOrderAsync(order.Id);
+            Console.WriteLine($"Order with id: {msg[0]} cancelled");
         }
     }
 }

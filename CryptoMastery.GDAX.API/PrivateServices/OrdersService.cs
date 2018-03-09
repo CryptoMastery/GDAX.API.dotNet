@@ -79,9 +79,9 @@ namespace CryptoMastery.GDAX.API.PrivateServices
             return Client.InvokeSecureRequest<Order>(CredentialsProvider, HttpMethod.Get, OrdersByIdEndpoint, orderId);
         }
 
-        public Task<Order> CancelOrderAsync(Guid orderId)
+        public Task<List<Guid>> CancelOrderAsync(Guid orderId)
         {
-            return Client.InvokeSecureRequest<Order>(CredentialsProvider, HttpMethod.Get, OrdersByIdEndpoint, orderId);
+            return Client.InvokeSecureRequest<List<Guid>>(CredentialsProvider, HttpMethod.Delete, OrdersByIdEndpoint, orderId);
         }
 
         public Task<List<Order>> GetOrdersAsync()
@@ -89,9 +89,9 @@ namespace CryptoMastery.GDAX.API.PrivateServices
             return Client.InvokeSecureRequest<List<Order>>(CredentialsProvider, HttpMethod.Get, OrdersEndpoint);
         }
 
-        public Task<List<string>> CancelAllOrdersAsync()
+        public Task<List<Guid>> CancelAllOrdersAsync()
         {
-            return Client.InvokeSecureRequest<List<string>>(CredentialsProvider, HttpMethod.Delete, OrdersEndpoint);
+            return Client.InvokeSecureRequest<List<Guid>>(CredentialsProvider, HttpMethod.Delete, OrdersEndpoint);
         }
 
         [DataContract]
