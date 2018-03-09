@@ -7,6 +7,9 @@
     <PackageLicenseUrl>https://github.com/CryptoMastery/GDAX.API.dotNet/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/CryptoMastery/GDAX.API.dotNet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/CryptoMastery/GDAX.API.dotNet</RepositoryUrl>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\CryptoMastery.GDAX.API.Model\CryptoMastery.GDAX.API.Model.csproj" />
