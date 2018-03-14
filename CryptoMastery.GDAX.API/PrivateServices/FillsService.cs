@@ -18,9 +18,9 @@ namespace CryptoMastery.GDAX.API.PrivateServices
         {
         }
 
-        public Task<List<Fill>> GetFillsAsync(Guid orderId)
+        public async Task<List<Fill>> GetFillsAsync(Guid orderId)
         {
-            return Client.InvokeSecureRequest<List<Fill>>(CredentialsProvider, HttpMethod.Get,
+            return await Client.InvokeSecureRequest<List<Fill>>(CredentialsProvider, HttpMethod.Get,
                 GetFillsByOrderIdEndpoint,
                 orderId);
         }

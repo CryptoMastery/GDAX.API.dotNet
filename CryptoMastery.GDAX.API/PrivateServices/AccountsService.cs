@@ -20,20 +20,22 @@ namespace CryptoMastery.GDAX.API.PrivateServices
         {
         }
 
-        public Task<List<Account>> GetAccountsAsync()
+        public async Task<List<Account>> GetAccountsAsync()
         {
-            return Client.InvokeSecureRequest<List<Account>>(CredentialsProvider, HttpMethod.Get, GetAccountsEndpoint);
+            return await Client.InvokeSecureRequest<List<Account>>(CredentialsProvider, HttpMethod.Get,
+                GetAccountsEndpoint);
         }
 
-        public Task<Account> GetAccountByIdAsync(Guid accountId)
+        public async Task<Account> GetAccountByIdAsync(Guid accountId)
         {
-            return Client.InvokeSecureRequest<Account>(CredentialsProvider, HttpMethod.Get, GetAccountByIdEndpoint,
+            return await Client.InvokeSecureRequest<Account>(CredentialsProvider, HttpMethod.Get,
+                GetAccountByIdEndpoint,
                 accountId);
         }
 
-        public Task<List<AccountHold>> GetAccountHoldsAsync(Guid accountId)
+        public async Task<List<AccountHold>> GetAccountHoldsAsync(Guid accountId)
         {
-            return Client.InvokeSecureRequest<List<AccountHold>>(CredentialsProvider, HttpMethod.Get,
+            return await Client.InvokeSecureRequest<List<AccountHold>>(CredentialsProvider, HttpMethod.Get,
                 GetAccountHoldsEndpoint,
                 accountId);
         }

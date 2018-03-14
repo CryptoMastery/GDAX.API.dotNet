@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using CryptoMastery.GDAX.API.Contracts.Configuration;
+using CryptoMastery.GDAX.API.Helpers;
 using Newtonsoft.Json;
 
 namespace CryptoMastery.GDAX.API.Client
@@ -16,7 +17,6 @@ namespace CryptoMastery.GDAX.API.Client
         private const string CbAccessSign = "CB-ACCESS-SIGN";
         private const string CbAccessTimestamp = "CB-ACCESS-TIMESTAMP";
         private const string CbAccessPassphrase = "CB-ACCESS-PASSPHRASE";
-        private static readonly DateTime Epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         private static readonly JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
         {
@@ -104,11 +104,6 @@ namespace CryptoMastery.GDAX.API.Client
             return rawContent;
         }
 
-        private static long GetTimeStampInSecordsSinceUnixEpoch(DateTime currentTime)
-        {
-            return Convert.ToInt64((currentTime.ToUniversalTime() - Epoch).TotalSeconds);
-        }
-
         private static string GenerateSignature(long timeStamp, HttpMethod method, string requestPath, string body,
             string secret)
         {
@@ -127,7 +122,7 @@ namespace CryptoMastery.GDAX.API.Client
             HttpMethod httpMethod, string url, string body)
         {
             var currentTime = DateTime.Now;
-            var timeStamp = GetTimeStampInSecordsSinceUnixEpoch(currentTime);
+            var timeStamp = TimeHelper.GetTimeStampInSecondsSinceUnixEpoch(currentTime);
             request.Headers.Add(CbAccessKey, credentialsProvider.ApiKey);
             request.Headers.Add(CbAccessPassphrase, credentialsProvider.PassPhrase);
             request.Headers.Add(CbAccessTimestamp, timeStamp.ToString());

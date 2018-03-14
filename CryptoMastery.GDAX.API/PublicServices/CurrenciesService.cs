@@ -16,9 +16,9 @@ namespace CryptoMastery.GDAX.API.PublicServices
         {
         }
 
-        public Task<List<Currency>> GetCurrenciesAsync()
+        public async Task<List<Currency>> GetCurrenciesAsync()
         {
-            return Client.InvokeRequest<List<Currency>>(HttpMethod.Get, GetCurrenciesEndpoint);
+            return await Client.InvokeRequest<List<Currency>>(HttpMethod.Get, GetCurrenciesEndpoint);
         }
     }
 }

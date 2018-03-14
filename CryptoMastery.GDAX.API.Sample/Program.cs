@@ -25,6 +25,20 @@ namespace CryptoMastery.GDAX.API.Sample
 
         private static async Task Sample()
         {
+            //Historical Prices
+            //FOR SOME REASON SANDBOX DOESN'T PROVIDE HISTORICAL PRICES
+            var prodSettingsProvider = new ConnectionSettingsProvider(ConnectionSettingsProvider.DefaultProduction);
+            var historicalPricesService = new ProductsService(prodSettingsProvider);
+            var prices =
+                await historicalPricesService.GetProductHistoricalRatesAsyc("BTC-USD", RateGranularities.Gr1Minute);
+            Console.WriteLine($"{prices.Count} latest prices found");
+            var start = DateTime.Now.AddHours(-10);
+            var end = start.AddMinutes(10);
+            prices = await historicalPricesService.GetProductHistoricalRatesAsyc("BTC-USD", RateGranularities.Gr1Minute,
+                start, end);
+            Console.WriteLine($"{prices.Count} prices between {start} and {end} found");
+
+            //Use Sandbox for the rest of APIs
             var settingsProvider = new ConnectionSettingsProvider(ConnectionSettingsProvider.DefaultSandbox);
             var credentailsProvider = new SampleCredentailsProvider();
 
@@ -71,7 +85,7 @@ namespace CryptoMastery.GDAX.API.Sample
             var fillsService = new FillsService(credentailsProvider, settingsProvider);
             var fills = await fillsService.GetFillsAsync(ord1.Id);
             Console.WriteLine($"{fills.Count} fills found for order {ord1.Id}");
-            
+
             //Order Calcellation
             var msg = await orderService.CancelOrderAsync(order.Id);
             Console.WriteLine($"Order with id: {msg[0]} cancelled");

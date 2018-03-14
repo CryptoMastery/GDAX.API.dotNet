@@ -20,7 +20,7 @@ namespace CryptoMastery.GDAX.API.PrivateServices
         {
         }
 
-        public Task<Order> PlaceLimitGTCOrderAsync(
+        public async Task<Order> PlaceLimitGTCOrderAsync(
             Sides orderSide,
             string productId,
             decimal price,
@@ -39,14 +39,14 @@ namespace CryptoMastery.GDAX.API.PrivateServices
                 SelfTradePreventionFlag = selfTradePreventionFlag.GetString(),
                 PostOnly = true
             };
-            return Client.InvokeSecureRequestWithBody<OrderRequest, Order>(
+            return await Client.InvokeSecureRequestWithBody<OrderRequest, Order>(
                 CredentialsProvider,
                 HttpMethod.Post,
                 OrdersEndpoint,
                 orderRequest);
         }
 
-        public Task<Order> PlaceLimitGTCOrderAsync(
+        public async Task<Order> PlaceLimitGTCOrderAsync(
             Sides orderSide,
             string productId,
             decimal price,
@@ -67,31 +67,33 @@ namespace CryptoMastery.GDAX.API.PrivateServices
                 ClientOrderId = clientOrderId,
                 PostOnly = true
             };
-            return Client.InvokeSecureRequestWithBody<OrderRequest, Order>(
+            return await Client.InvokeSecureRequestWithBody<OrderRequest, Order>(
                 CredentialsProvider,
                 HttpMethod.Post,
                 OrdersEndpoint,
                 orderRequest);
         }
 
-        public Task<Order> GetOrderByIdAsync(Guid orderId)
+        public async Task<Order> GetOrderByIdAsync(Guid orderId)
         {
-            return Client.InvokeSecureRequest<Order>(CredentialsProvider, HttpMethod.Get, OrdersByIdEndpoint, orderId);
+            return await Client.InvokeSecureRequest<Order>(CredentialsProvider, HttpMethod.Get, OrdersByIdEndpoint,
+                orderId);
         }
 
-        public Task<List<Guid>> CancelOrderAsync(Guid orderId)
+        public async Task<List<Guid>> CancelOrderAsync(Guid orderId)
         {
-            return Client.InvokeSecureRequest<List<Guid>>(CredentialsProvider, HttpMethod.Delete, OrdersByIdEndpoint, orderId);
+            return await Client.InvokeSecureRequest<List<Guid>>(CredentialsProvider, HttpMethod.Delete,
+                OrdersByIdEndpoint, orderId);
         }
 
-        public Task<List<Order>> GetOrdersAsync()
+        public async Task<List<Order>> GetOrdersAsync()
         {
-            return Client.InvokeSecureRequest<List<Order>>(CredentialsProvider, HttpMethod.Get, OrdersEndpoint);
+            return await Client.InvokeSecureRequest<List<Order>>(CredentialsProvider, HttpMethod.Get, OrdersEndpoint);
         }
 
-        public Task<List<Guid>> CancelAllOrdersAsync()
+        public async Task<List<Guid>> CancelAllOrdersAsync()
         {
-            return Client.InvokeSecureRequest<List<Guid>>(CredentialsProvider, HttpMethod.Delete, OrdersEndpoint);
+            return await Client.InvokeSecureRequest<List<Guid>>(CredentialsProvider, HttpMethod.Delete, OrdersEndpoint);
         }
 
         [DataContract]

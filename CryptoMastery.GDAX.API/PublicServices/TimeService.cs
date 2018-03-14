@@ -15,9 +15,9 @@ namespace CryptoMastery.GDAX.API.PublicServices
         {
         }
 
-        public Task<Time> GetTimeAsync()
+        public async Task<Time> GetTimeAsync()
         {
-            return Client.InvokeRequest<Time>(HttpMethod.Get, GetTimeEndpoint);
+            return await Client.InvokeRequest<Time>(HttpMethod.Get, GetTimeEndpoint);
         }
     }
 }
